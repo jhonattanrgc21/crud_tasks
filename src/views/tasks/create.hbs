@@ -1,0 +1,20 @@
+<div class="col-md-4 offset-md-4">
+    <div class="card">
+        <div class="card-body">
+            <form action="/tasks/create" method="POST">
+                <!-- Formulario del titulo  -->
+                <div class="form-group">
+                    <input class="form-control" type="text" name="title" placeholder="Title" autofocus required>
+                </div>
+
+                <!-- Formulario de la descripcion  -->
+                <div class="form-group">
+                    <input class="form-control" type="text" name="description" placeholder="Description">
+                </div>
+
+                <!-- Boton de envio -->
+                <button type="submit" class="btn btn-primary btn-block">Save</button>
+            </form>
+        </div>
+    </div>
+</div>
