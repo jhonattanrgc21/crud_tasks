@@ -1,5 +1,5 @@
 import {Router, Request, Response, request} from 'express';
-import Task from '../models/tasks.model';
+import Task from '../database/entities/tasks.entitie';
 
 const router = Router();
 

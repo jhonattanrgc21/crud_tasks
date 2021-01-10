@@ -1,5 +1,5 @@
 import App from './app';
-import db from './database';
+import db from './config/database';
 
 // Realiza la conexion con la BD
 db();
