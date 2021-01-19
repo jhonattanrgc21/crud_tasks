@@ -9,7 +9,11 @@
     "clean": "rimraf ./dist",
     "hbscopy": "ncp ./src/views/ ./dist/views/",
     "public": "ncp ./src/public/ ./dist/public/",
-    "start": "node dist/index"
+    "start": "node dist/index",
+    "typeorm": "node --require ts-node/register ./node_modules/typeorm/cli.js",
+		"seed:config": "ts-node ./node_modules/typeorm-seeding/dist/cli.js config",
+		"seed:run": "ts-node ./node_modules/typeorm-seeding/dist/cli.js seed",
+		"schema:drop": "ts-node ./node_modules/typeorm/cli.js schema:drop"
   },
   "keywords": [
     "node",
