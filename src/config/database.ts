@@ -1,4 +1,32 @@
-import mongoose from 'mongoose';
+// ======================================
+//				Modules
+// ======================================
+
+import { join } from 'path';
+import { createConnection, useContainer } from 'typeorm';
+//import { Container } from 'typedi';
+
+// ======================================
+//			Connect to DB
+// ======================================
+export default async function connect() {
+	//useContainer(Container);
+	await createConnection({
+		type: 'mysql',
+		host: 'localhost',
+		port: 3306,
+		username: process.env.DB_USERNAME || 'tasks_admin',
+		password: process.env.DB_PASSWORD || '1234',
+		database: process.env.DB_DATABASE || 'tasks',
+		synchronize: true,
+		entities: [join(__dirname, '../database/entities/**.entity.{ts,js}')],
+	})
+		.then(() => console.log('Database is Connected'))
+		.catch((error) => console.log(error));
+}
+
+
+/*import mongoose from 'mongoose';
 
 async function conect() {
     try{
@@ -13,4 +41,4 @@ async function conect() {
     }
 }
 
-export default conect;
+export default conect;*/

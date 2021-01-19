@@ -1,9 +1,19 @@
-import App from './app';
-import db from './config/database';
+// ======================================
+//			    Modules
+// ======================================
+import 'reflect-metadata';
+import App from './app.module';
+import { createConnection} from 'typeorm';
+//import db from './config/database';
 
-// Realiza la conexion con la BD
-db();
+// ======================================
+//			Connect to DB
+// ======================================
+createConnection();
+//db();
 
-// Inicializa y ejecuta el servidor
+// ======================================
+//			    Server
+// ======================================
 const app = new App();
 app.start();

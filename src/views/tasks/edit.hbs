@@ -1,7 +1,7 @@
 <div class="col-md-4 offset-md-4">
     <div class="card">
         <div class="card-body">
-            <form action="/tasks/edit/{{task._id}}" method="POST">
+            <form action="/tasks/edit/{{task.id}}" method="POST">
                 <!-- Formulario del titulo  -->
                 <div class="form-group">
                     <input class="form-control" type="text" name="title" value="{{task.title}}" placeholder="Title" autofocus required>
