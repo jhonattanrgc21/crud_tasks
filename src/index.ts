@@ -1,19 +1,22 @@
-// ======================================
-//			    Modules
-// ======================================
 import 'reflect-metadata';
 import App from './app.module';
 import { createConnection} from 'typeorm';
-//import db from './config/database';
 
 // ======================================
-//			Connect to DB
+//			    Constant
 // ======================================
-createConnection();
-//db();
+const PORT = process.env.NODE_PORT || 4000;
 
 // ======================================
 //			    Server
 // ======================================
-const app = new App();
-app.start();
+async function main(){
+    createConnection();
+    const app = await App();
+    
+    app.listen(PORT, () =>
+		console.log(`Application is running on: http://localhost:${PORT}`),
+	)
+}
+
+main();

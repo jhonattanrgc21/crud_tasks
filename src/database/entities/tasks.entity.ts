@@ -1,21 +1,30 @@
 import {
     Entity, 
     Column, 
-    PrimaryGeneratedColumn 
+    PrimaryGeneratedColumn, 
+    Index
 } from 'typeorm';
 
 // ======================================
 //          Tasks Entity
 // ======================================
-@Entity()
+@Entity('tasks')
 export default class Task{
     @PrimaryGeneratedColumn()
     id: number;
 
-    @Column()
+    @Index('tasks_title_unique', { unique: true })
+    @Column({
+		type: 'varchar',
+		length: 50,
+		comment: 'Titulo de la tarea.',
+	})
     title: string;
 
-    @Column()
+    @Column({
+		type: 'text',
+		comment: 'Descripcion de la tarea.',
+	})
     description: string;
 }
 
