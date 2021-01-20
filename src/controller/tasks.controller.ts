@@ -1,6 +1,3 @@
-// ======================================
-//              Modules
-// ======================================
 import {Request, Response } from 'express';
 import {getRepository} from 'typeorm';
 import Task from '../database/entities/tasks.entity';

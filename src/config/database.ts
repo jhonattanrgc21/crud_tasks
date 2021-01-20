@@ -1,16 +1,10 @@
-// ======================================
-//				Modules
-// ======================================
-
 import { join } from 'path';
 import { createConnection, useContainer } from 'typeorm';
-//import { Container } from 'typedi';
 
 // ======================================
 //			Connect to DB
 // ======================================
 export default async function connect() {
-	//useContainer(Container);
 	await createConnection({
 		type: 'mysql',
 		host: 'localhost',

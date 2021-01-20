@@ -1,14 +1,13 @@
-import { Factory, Seeder } from 'typeorm-seeding';
+import Faker from 'faker';
+import { define } from 'typeorm-seeding';
 import Task from '../entities/tasks.entity';
 
 // ======================================
-//				Task Seeder
+//				Task Factory
 // ======================================
-export default class CreateTask implements Seeder {
-	// ======================================
-	//				Run Seeder
-	// ======================================
-	public async run(factory: Factory): Promise<any> {
-		await factory(Task)().createMany(10);
-	}
-}
+define(Task, (faker: typeof Faker) => {
+	const task= new Task();
+	task.title = faker.lorem.sentence(4);
+	task.description = faker.lorem.words(10);
+	return task;
+});

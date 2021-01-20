@@ -1,6 +1,9 @@
 import {Router} from 'express';
 import {createTask, deleteTask, editTask, getTasks, getViewCreate, getViewEdit} from '../controller/tasks.controller';
 
+// ======================================
+//				Tasks Routes
+// ======================================
 const router = Router();
 
 router.route('/create').get(getViewCreate).post(createTask);
